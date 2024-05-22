@@ -14,6 +14,7 @@
 		72DFFEEE2BFC855200DD416A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DFFEED2BFC855200DD416A /* Assets.xcassets */; };
 		72DFFEF12BFC855200DD416A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 72DFFEF02BFC855200DD416A /* Base */; };
 		72DFFEF92BFC858100DD416A /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DFFEF82BFC858100DD416A /* CalculatorViewController.swift */; };
+		72DFFF072BFE29CC00DD416A /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 72DFFF062BFE29CC00DD416A /* TextFieldEffects */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72DFFF072BFE29CC00DD416A /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = BMICalculator;
+			packageProductDependencies = (
+				72DFFF062BFE29CC00DD416A /* TextFieldEffects */,
+			);
 			productName = BMICalculator;
 			productReference = 72DFFEE12BFC855100DD416A /* BMICalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 72DFFED82BFC855100DD416A;
+			packageReferences = (
+				72DFFF052BFE29CB00DD416A /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+			);
 			productRefGroup = 72DFFEE22BFC855100DD416A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -377,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72DFFF052BFE29CB00DD416A /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72DFFF062BFE29CC00DD416A /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72DFFF052BFE29CB00DD416A /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72DFFED92BFC855100DD416A /* Project object */;
 }

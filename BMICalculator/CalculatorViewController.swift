@@ -14,7 +14,8 @@ class CalculatorViewController: UIViewController {
     @IBOutlet var bmiImageView: UIImageView!
     @IBOutlet var heightLabel: UILabel!
     @IBOutlet var weightLabel: UILabel!
-
+    
+    @IBOutlet var nickNameTextField: UITextField!
     @IBOutlet var heightTextField: UITextField!
     @IBOutlet var weightTextField: UITextField!
     
@@ -23,8 +24,8 @@ class CalculatorViewController: UIViewController {
     @IBOutlet var eyeButton: UIButton!
     @IBOutlet var randomBMIButton: UIButton!
     @IBOutlet var resultButton: UIButton!
+    @IBOutlet var resetButton: UIButton!
     
-
     var secureBool: Bool = false
     
     
@@ -52,6 +53,14 @@ class CalculatorViewController: UIViewController {
         
         buttonUI(resultButton, imageName: "", size: 15, buttonTintColor: nil, buttonTitle: "결과 확인", titleColor: .white, backgroundColor: .purple, cornerRadiusSize: 10)
         
+        buttonUI(resetButton, imageName: "", size: 12, buttonTintColor: nil, buttonTitle: "  기록 지우기  ", titleColor: .white, backgroundColor: .black, cornerRadiusSize: 10)
+        
+        let nickname = UserDefaults.standard.string(forKey: "nickname")
+        let height = UserDefaults.standard.string(forKey: "height")
+        let weight = UserDefaults.standard.string(forKey: "weight")
+        nickNameTextField.text = nickname
+        heightTextField.text = height
+        weightTextField.text = weight
         
     }
     
@@ -157,14 +166,20 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
         
+        let nickname = nickNameTextField.text ?? ""
         let heightString = heightTextField.text ?? ""
         let weightString = weightTextField.text ?? ""
         
-        if heightString.count == 0 || weightString.count == 0 {
+        if nickname.count == 0 || heightString.count == 0 || weightString.count == 0 {
             alertSetting(title: "오류", message: "빈칸을 입력해주세요")
         } else {
             
             if let height = Double(heightString), let weight = Double(weightString) {
+                
+                print("저장")
+                UserDefaults.standard.set(nickNameTextField.text, forKey: "nickname")
+                UserDefaults.standard.set(heightTextField.text, forKey: "height")
+                UserDefaults.standard.set(weightTextField.text, forKey: "weight")
                 
                 alertSetting(title: "BMI 수치", message: bmiCalculator(height: height, weight: weight))
                 
@@ -175,16 +190,45 @@ class CalculatorViewController: UIViewController {
         
     @IBAction func randomBMIButtonTapped(_ sender: UIButton) {
         
+        let nickname = nickNameTextField.text ?? ""
         var height = Double.random(in: 150...200)
         var weight = Double.random(in: 40...150)
         
         height = Double(round(100 * height) / 100)
         weight = Double(round(100 * weight) / 100)
         
-        heightTextField.text = String(height)
-        weightTextField.text = String(weight)
         
-        alertSetting(title: "BMI 수치", message: bmiCalculator(height: height, weight: weight))
+        
+        if nickname.count == 0 {
+            alertSetting(title: "오류", message: "닉네임을 적어주세요.")
+        } else {
+            
+            heightTextField.text = String(height)
+            weightTextField.text = String(weight)
+            
+            print("저장")
+            UserDefaults.standard.set(nickNameTextField.text, forKey: "nickname")
+            UserDefaults.standard.set(heightTextField.text, forKey: "height")
+            UserDefaults.standard.set(weightTextField.text, forKey: "weight")
+            
+            alertSetting(title: "BMI 수치", message: bmiCalculator(height: height, weight: weight))
+        }
+        
+    }
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        print("지움")
+        
+        nickNameTextField.text = ""
+        heightTextField.text = ""
+        weightTextField.text = ""
+        
+        
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+            UserDefaults.standard.removeObject(forKey: key.description)
+        }
+        
+        alertSetting(title: "기록지우기", message: "기록하신 정보들이 지워졌습니다.")
         
     }
     

@@ -107,6 +107,40 @@
                                     <constraint firstAttribute="bottom" secondItem="aGM-N6-6Mt" secondAttribute="bottom" id="lY5-DB-lXQ"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VM1-sK-7ib" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="181" width="201.66666666666666" height="50"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gVF-vg-T1X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-sW-GVS">
+                                <rect key="frame" x="20" y="497.66666666666674" width="46" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQd-ce-3q8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -115,8 +149,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lCa-Mx-0rY" secondAttribute="trailing" constant="20" id="1Iw-IV-97t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E0n-qz-is6" secondAttribute="trailing" constant="20" id="1P0-8b-bjq"/>
                             <constraint firstItem="2Uv-va-Vdf" firstAttribute="top" secondItem="nbR-Qe-4ou" secondAttribute="bottom" constant="10" id="7BH-XQ-sYO"/>
+                            <constraint firstItem="VM1-sK-7ib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8ED-ug-Gd6"/>
                             <constraint firstItem="nbR-Qe-4ou" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-120" id="AYr-Fn-En7"/>
                             <constraint firstItem="vt9-LW-BcC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="FvD-IR-ql6"/>
+                            <constraint firstItem="c9B-W3-rC0" firstAttribute="leading" secondItem="VM1-sK-7ib" secondAttribute="trailing" constant="20" id="HGS-D5-5ki"/>
                             <constraint firstItem="oOl-vC-2DO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HyJ-5A-HW8"/>
                             <constraint firstItem="2Uv-va-Vdf" firstAttribute="top" secondItem="c9B-W3-rC0" secondAttribute="bottom" id="JG3-Y8-ouJ"/>
                             <constraint firstItem="2Uv-va-Vdf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Juf-XX-bYJ"/>
@@ -127,6 +163,7 @@
                             <constraint firstItem="eUM-8M-GOn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SHP-0K-kEr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUM-8M-GOn" secondAttribute="trailing" constant="20" id="WPi-Qb-cSt"/>
                             <constraint firstItem="c9B-W3-rC0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XsL-tK-l8e"/>
+                            <constraint firstItem="aJm-sW-GVS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aAv-BF-DBA"/>
                             <constraint firstItem="kcJ-yU-Wwi" firstAttribute="top" secondItem="oOl-vC-2DO" secondAttribute="bottom" constant="15" id="ggh-6j-oGC"/>
                             <constraint firstItem="E0n-qz-is6" firstAttribute="top" secondItem="eUM-8M-GOn" secondAttribute="bottom" constant="10" id="lSc-Dd-Hai"/>
                             <constraint firstItem="lCa-Mx-0rY" firstAttribute="top" secondItem="E0n-qz-is6" secondAttribute="bottom" constant="30" id="lxF-zU-Bng"/>
@@ -136,6 +173,8 @@
                             <constraint firstItem="kcJ-yU-Wwi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yCn-ID-hiC"/>
                             <constraint firstItem="c9B-W3-rC0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="yJf-O4-HXk"/>
                             <constraint firstItem="vt9-LW-BcC" firstAttribute="top" secondItem="2Uv-va-Vdf" secondAttribute="bottom" constant="30" id="yQs-sx-uap"/>
+                            <constraint firstItem="VM1-sK-7ib" firstAttribute="top" secondItem="kcJ-yU-Wwi" secondAttribute="bottom" constant="50" id="zHo-Ax-qJl"/>
+                            <constraint firstItem="aJm-sW-GVS" firstAttribute="top" secondItem="eUM-8M-GOn" secondAttribute="bottom" constant="10" id="zyt-8k-m4j"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="FMt-9p-acE" appends="YES" id="6F5-QT-JVE"/>
@@ -148,7 +187,9 @@
                         <outlet property="eyeButton" destination="aGM-N6-6Mt" id="MS2-0Q-P5Q"/>
                         <outlet property="heightLabel" destination="nbR-Qe-4ou" id="bTp-AY-eWJ"/>
                         <outlet property="heightTextField" destination="2Uv-va-Vdf" id="vaJ-Lj-6sV"/>
+                        <outlet property="nickNameTextField" destination="VM1-sK-7ib" id="5Av-DZ-CDD"/>
                         <outlet property="randomBMIButton" destination="E0n-qz-is6" id="sfA-sO-673"/>
+                        <outlet property="resetButton" destination="aJm-sW-GVS" id="xeJ-Cg-ljl"/>
                         <outlet property="resultButton" destination="lCa-Mx-0rY" id="KpB-fZ-LGw"/>
                         <outlet property="weightLabel" destination="vt9-LW-BcC" id="zgU-rC-XlX"/>
                         <outlet property="weightTextField" destination="4re-rQ-tkB" id="oYH-cn-bw5"/>
