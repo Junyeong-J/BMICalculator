@@ -136,7 +136,7 @@ class CalculatorViewController: UIViewController {
         let result: String
         
         bmi = weight / ((height/100) * (height/100))
-        bmi = Double(round(100 * bmi) / 100)// 반올림했음
+        bmi = Double(round(100 * bmi) / 100)//반올림했음
         
         switch bmi{
         case ..<18.5:
